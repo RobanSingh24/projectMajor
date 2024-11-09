@@ -2,25 +2,25 @@
     "version": 2,
     "builds": [
       {
-        "src": "api/index.js",
+        "src": "cloud-deduplication/index.js",
         "use": "@vercel/node"
       },
       {
-        "src": "client/package.json",
+        "src": "cloud-deduplication-client/package.json",
         "use": "@vercel/static-build",
         "config": {
-          "distDir": "client/build"
+          "distDir": "cloud-deduplication-client/build"
         }
       }
     ],
     "routes": [
       {
-        "src": "/api/(.*)",
-        "dest": "/api/index.js"
+        "src": "/cloud-deduplication/(.*)",
+        "dest": "/cloud-deduplication/index.js"
       },
       {
         "src": "/(.*)",
-        "dest": "/client/$1"
+        "dest": "/cloud-deduplication-client/$1"
       }
     ]
   }
