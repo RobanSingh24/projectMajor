@@ -9,7 +9,7 @@
         "src": "cloud-deduplication-client/package.json",
         "use": "@vercel/static-build",
         "config": {
-          "distDir": "cloud-deduplication-client/build"
+          "distDir": "cloud-deduplication-client/src"
         }
       }
     ],
