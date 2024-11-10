@@ -8,7 +8,7 @@ const handleUpload = async () => {
   formData.append('file', file);
 
   try {
-    const response = await axios.post('https://project-major-server-h4df0xskn-roban-singhs-projects.vercel.app/upload', formData, {
+    const response = await axios.post('https://project-major-server-pbalyef33-roban-singhs-projects.vercel.app/upload', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
