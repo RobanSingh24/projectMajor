@@ -1,8 +1,6 @@
-const express = require('express');
 const cors = require('cors');
+const express = require('express');
 const dotenv = require('dotenv');
-
-// Import Routes
 const uploadRoute = require('./routes/upload');
 const uploadedFilesRoute = require('./routes/uploadedFiles');
 const bucketStatusRoute = require('./routes/bucketStatus');
@@ -10,9 +8,12 @@ const bucketStatusRoute = require('./routes/bucketStatus');
 dotenv.config();
 
 const app = express();
+const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: '*' // Allow all origins or specify your client URL here
+}));
 app.use(express.json());
 
 // Routes
@@ -25,4 +26,12 @@ app.get('/', (req, res) => {
   res.send('Cloud Deduplication Server is running');
 });
 
-module.exports = app;
+// Health Check Endpoint
+app.get('/health', (req, res) => {
+  res.status(200).send('Server is healthy');
+});
+
+// Start Server
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
