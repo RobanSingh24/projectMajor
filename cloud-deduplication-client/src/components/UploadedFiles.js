@@ -9,7 +9,9 @@ const UploadedFiles = () => {
   useEffect(() => {
     const fetchUploadedFiles = async () => {
       try {
-        const response = await axios.get('https://projectmajor.onrender.com/uploaded-files'); // Update with your backend URL
+        const response = await axios.get('https://projectmajor.onrender.com/uploaded-files', {
+          withCredentials: true // If your server requires credentials like cookies
+        });
         setFiles(response.data); // Assuming response.data is an array of files
       } catch (error) {
         console.error('Error fetching uploaded files:', error);
@@ -36,7 +38,7 @@ const UploadedFiles = () => {
         {filteredFiles.length > 0 ? (
           filteredFiles.map((file) => (
             <li key={file.name}>
-              <a href={`https://${process.env.AWS_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${file.name}`} target="_blank" rel="noopener noreferrer">
+              <a href={`https://${process.env.REACT_APP_AWS_BUCKET_NAME}.s3.${process.env.REACT_APP_AWS_REGION}.amazonaws.com/${file.name}`} target="_blank" rel="noopener noreferrer">
                 {file.name}
               </a> - {file.size} bytes
             </li>
