@@ -36,7 +36,7 @@ const UploadedFiles = () => {
         {filteredFiles.length > 0 ? (
           filteredFiles.map((file) => (
             <li key={file.name}>
-              <a href={`https://${process.env.REACT_APP_AWS_BUCKET_NAME}.s3.${process.env.REACT_APP.AWS_REGION}.amazonaws.com/${file.name}`} target="_blank" rel="noopener noreferrer">
+              <a href={`https://${process.env.AWS_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${file.name}`} target="_blank" rel="noopener noreferrer">
                 {file.name}
               </a> - {file.size} bytes
             </li>
