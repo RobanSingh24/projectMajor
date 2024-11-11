@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: '*' // Allow all origins or specify your client URL here
+  origin: 'https://project-major-client.vercel.app/*' // Allow all origins or specify your client URL here
 }));
 app.use(express.json());
 
