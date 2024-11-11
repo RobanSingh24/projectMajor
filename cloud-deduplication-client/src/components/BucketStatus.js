@@ -8,7 +8,7 @@ const BucketStatus = () => {
   useEffect(() => {
     const fetchBucketStatus = async () => {
       try {
-        const response = await axios.get('https://project-major-server-pbalyef33-roban-singhs-projects.vercel.app/bucket-status'); // Update with your backend URL
+        const response = await axios.get('https://projectmajor.onrender.com/bucket-status'); // Update with your backend URL
         setStatus(response.data.status);
       } catch (error) {
         console.error('Error fetching bucket status:', error);

@@ -21,7 +21,7 @@ const FileUpload = () => {
     formData.append('file', file);
 
     try {
-      const response = await axios.post('https://project-major-server-pbalyef33-roban-singhs-projects.vercel.app/upload', formData, { // Update URL to your backend
+      const response = await axios.post('https://projectmajor.onrender.com/upload', formData, { // Update URL to your backend
         headers: {
           'Content-Type': 'multipart/form-data',
         },

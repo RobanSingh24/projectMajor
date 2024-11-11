@@ -9,7 +9,7 @@ const UploadedFiles = () => {
   useEffect(() => {
     const fetchUploadedFiles = async () => {
       try {
-        const response = await axios.get('https://project-major-server-pbalyef33-roban-singhs-projects.vercel.app/uploaded-files'); // Update with your backend URL
+        const response = await axios.get('https://projectmajor.onrender.com/uploaded-files'); // Update with your backend URL
         setFiles(response.data); // Assuming response.data is an array of files
       } catch (error) {
         console.error('Error fetching uploaded files:', error);
